@@ -1,0 +1,30 @@
+[package]
+name = "fs"
+version = "0.1.0"
+authors = ["eric MOLLE <eric.molle>"]
+
+[features]
+default = ["rustc_json_body",  "multipart"]
+rustc_json_body = ["rustc-serialize"]
+
+[dependencies.multipart]
+#feature
+version = "0.3.1"
+default-features = false
+features = ["server" ,"hyper"]
+optional = true
+
+
+[dependencies.rustc-serialize]
+version = "0.3.16"
+optional = true
+
+[dependencies]
+rustful = { git = "https://github.com/Ogeon/rustful.git" }
+env_logger = "0.3.1"
+log = "0.3.2"
+rust-crypto ={ git="https://github.com/DaGenix/rust-crypto.git" }
+time = "*"
+unicase="*"
+bincode="*"
+#rustc-serialize = "*"
